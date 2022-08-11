@@ -1,14 +1,14 @@
 //
-//  LeBonTestTests.swift
-//  LeBonTestTests
+//  LebontestTests.swift
+//  LebontestTests
 //
 //  Created by Thomas Fromont on 11/08/2022.
 //
 
 import XCTest
-@testable import LeBonTest
+@testable import Lebontest
 
-class LeBonTestTests: XCTestCase {
+class LebontestTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

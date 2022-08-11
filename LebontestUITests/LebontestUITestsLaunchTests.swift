@@ -1,13 +1,13 @@
 //
-//  LeBonTestUITestsLaunchTests.swift
-//  LeBonTestUITests
+//  LebontestUITestsLaunchTests.swift
+//  LebontestUITests
 //
 //  Created by Thomas Fromont on 11/08/2022.
 //
 
 import XCTest
 
-class LeBonTestUITestsLaunchTests: XCTestCase {
+class LebontestUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
