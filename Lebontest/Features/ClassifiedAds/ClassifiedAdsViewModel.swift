@@ -12,17 +12,34 @@ protocol ClassifiedAdsViewModelDelegate: AnyObject {
 final class ClassifiedAdsViewModel {
 
     struct Data {
-        public let cells: [AdCellViewModel]
+        let cellViewModels: [AdCellViewModel]
     }
 
     // MARK: - Properties
+
+    private let classifiedAdsRepository: ClassifiedAdsRepositoryType
+    private let categoryMapperProvider: CategoryMapperProviderType
 
     weak var delegate: ClassifiedAdsViewModelDelegate?
 
     // MARK: - Inputs
 
     func fetch() {
-        bind?(Data(cells: [AdCellViewModel(), AdCellViewModel(), AdCellViewModel()]))
+        // TODO: - Handle loading
+        classifiedAdsRepository.get(
+            onComplete: { [weak self] classifiedAds in
+                self?.categoryMapperProvider.get { [weak self] categoryMapper in
+                    let cellViewModels = self?.buildCellViewModels(
+                        classifiedAds: classifiedAds,
+                        categoryMapper: categoryMapper
+                    ) ?? []
+                    self?.bind?(Data(cellViewModels: cellViewModels))
+                }
+            },
+            onError: { error in
+                // TODO: - Handle error
+            }
+        )
     }
 
     // MARK: - Outputs
@@ -32,7 +49,12 @@ final class ClassifiedAdsViewModel {
 
     // MARK: - Initializers
 
-    init() {
+    init(
+        classifiedAdsRepository: ClassifiedAdsRepositoryType,
+        categoryMapperProvider: CategoryMapperProviderType
+    ) {
+        self.classifiedAdsRepository = classifiedAdsRepository
+        self.categoryMapperProvider = categoryMapperProvider
         navigationTitle = Translation.ClassifiedAds.navigationTitle
     }
 
@@ -40,5 +62,11 @@ final class ClassifiedAdsViewModel {
 
     private func selectClassifiedAd(_ classifiedAd: ClassifiedAd) {
         delegate?.didSelect(classifiedAd: classifiedAd, from: self)
+    }
+
+    private func buildCellViewModels(classifiedAds: [ClassifiedAd], categoryMapper: CategoryMapper) -> [AdCellViewModel] {
+        classifiedAds.map { _ in
+            AdCellViewModel()
+        }
     }
 }

@@ -17,7 +17,6 @@ Since those kind of folder tend to get quite big really fast I generally prefer 
 
 This is where the design system of the application is defined.
 This part aim to be move in an external library or at least in a module.
-This is why you can find many class/struct which are `public`
 
 ##### Features
 
@@ -27,3 +26,5 @@ This application contains only two features, the classified ads list and the cla
 ### Time spent ⧗
 
 - ~1h to read the subject, initialised the project and setup my environment
+- ~2h to implement the basis of the Design System (Colors, Font) and create the first VM + VC with a header
+- ~2h to implement the API Calls with Tests

@@ -10,6 +10,8 @@ import UIKit
 final class AppCoordinator: Coordinator {
 
     private let window: UIWindow?
+    private let httpClient: HTTPClientType
+    private let categoryMapperProvider: CategoryMapperProviderType
     private let designToken: DesignToken
     private let navigationController = UINavigationController()
 
@@ -17,9 +19,12 @@ final class AppCoordinator: Coordinator {
 
     init(
         window: UIWindow?,
+        httpClient: HTTPClientType,
         designToken: DesignToken
     ) {
         self.window = window
+        self.httpClient = httpClient
+        self.categoryMapperProvider = CategoryMapperProvider(categoriesRepository: CategoriesRepository(httpClient: httpClient))
         self.designToken = designToken
     }
 
@@ -36,7 +41,10 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showClassifiedAds() {
-        let viewModel = ClassifiedAdsViewModel()
+        let viewModel = ClassifiedAdsViewModel(
+            classifiedAdsRepository: ClassifiedAdsRepository(httpClient: httpClient),
+            categoryMapperProvider: categoryMapperProvider
+        )
         viewModel.delegate = self
         let viewController = ClassifiedAdsViewController(viewModel: viewModel, designToken: designToken)
         navigationController.viewControllers = [viewController]

@@ -19,7 +19,7 @@ final class AdCellViewModel {
         self.selectCompletion = selectCompletion
     }
 
-    public func select() {
+    func select() {
         selectCompletion?()
     }
 }

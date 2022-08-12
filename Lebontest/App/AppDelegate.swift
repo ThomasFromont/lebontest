@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         coordinator = AppCoordinator(
             window: window,
+            httpClient: HTTPClient(),
             designToken: DesignToken.shared
         )
         coordinator?.start()

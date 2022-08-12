@@ -7,16 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4FD22628A6BF7200418201 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22528A6BF7200418201 /* Endpoint.swift */; };
+		6C4FD22828A6BF7C00418201 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22728A6BF7C00418201 /* HTTPClient.swift */; };
+		6C4FD22C28A6C38C00418201 /* ClassifiedAdsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22B28A6C38C00418201 /* ClassifiedAdsEndpoint.swift */; };
+		6C4FD22E28A6C60F00418201 /* CategoriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22D28A6C60F00418201 /* CategoriesEndpoint.swift */; };
+		6C4FD23128A6C88100418201 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23028A6C88100418201 /* CategoryMapper.swift */; };
+		6C4FD23328A6C8CC00418201 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23228A6C8CC00418201 /* Category.swift */; };
+		6C4FD23628A6C98100418201 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23528A6C98100418201 /* CategoriesRepository.swift */; };
+		6C4FD23828A6CF4300418201 /* CategoryMapperProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23728A6CF4300418201 /* CategoryMapperProvider.swift */; };
+		6C4FD23B28A6D85300418201 /* CategoriesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23A28A6D85300418201 /* CategoriesRepositoryTests.swift */; };
+		6C4FD24028A6D8F300418201 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD23F28A6D8F300418201 /* MockHTTPClient.swift */; };
+		6C4FD24228A6DD5200418201 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD24128A6DD5200418201 /* XCTestCase+Wait.swift */; };
+		6C4FD24428A6DE9100418201 /* bad-request.json in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD24328A6DE9100418201 /* bad-request.json */; };
+		6C4FD24B28A6DF1500418201 /* categories-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD24928A6DEC200418201 /* categories-error.json */; };
+		6C4FD24C28A6DF1800418201 /* categories-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD24728A6DEB400418201 /* categories-success.json */; };
+		6C4FD25028A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD24F28A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift */; };
+		6C4FD25628A6E0AB00418201 /* classified-ads-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD25228A6E02700418201 /* classified-ads-success.json */; };
+		6C4FD25728A6E0AF00418201 /* classified-ads-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD25428A6E05100418201 /* classified-ads-error.json */; };
 		6C6C9D4728A688FC009B8E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4928A688FC009B8E73 /* Localizable.strings */; };
 		6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4B28A6899F009B8E73 /* Translation.swift */; };
 		6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5028A68ADC009B8E73 /* AdCell.swift */; };
 		6C6C9D5328A68AE3009B8E73 /* AdCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5228A68AE3009B8E73 /* AdCellViewModel.swift */; };
 		6C6C9D5528A69361009B8E73 /* AdsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */; };
 		6C6C9D5728A69517009B8E73 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5628A69517009B8E73 /* Asset.swift */; };
+		6C6C9D5928A6B320009B8E73 /* ClassifiedAdsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5828A6B320009B8E73 /* ClassifiedAdsRepository.swift */; };
 		6CE0267B28A5314200CD73C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0267A28A5314200CD73C9 /* AppDelegate.swift */; };
 		6CE0268428A5314400CD73C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0268328A5314400CD73C9 /* Assets.xcassets */; };
 		6CE0268728A5314400CD73C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0268528A5314400CD73C9 /* LaunchScreen.storyboard */; };
-		6CE0269228A5314400CD73C9 /* LebontestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0269128A5314400CD73C9 /* LebontestTests.swift */; };
 		6CE0269C28A5314400CD73C9 /* LebontestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0269B28A5314400CD73C9 /* LebontestUITests.swift */; };
 		6CE0269E28A5314400CD73C9 /* LebontestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0269D28A5314400CD73C9 /* LebontestUITestsLaunchTests.swift */; };
 		6CE026AC28A533CA00CD73C9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026AB28A533CA00CD73C9 /* AppCoordinator.swift */; };
@@ -49,6 +66,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C4FD22528A6BF7200418201 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		6C4FD22728A6BF7C00418201 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		6C4FD22B28A6C38C00418201 /* ClassifiedAdsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsEndpoint.swift; sourceTree = "<group>"; };
+		6C4FD22D28A6C60F00418201 /* CategoriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEndpoint.swift; sourceTree = "<group>"; };
+		6C4FD23028A6C88100418201 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
+		6C4FD23228A6C8CC00418201 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		6C4FD23528A6C98100418201 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
+		6C4FD23728A6CF4300418201 /* CategoryMapperProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapperProvider.swift; sourceTree = "<group>"; };
+		6C4FD23A28A6D85300418201 /* CategoriesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryTests.swift; sourceTree = "<group>"; };
+		6C4FD23F28A6D8F300418201 /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
+		6C4FD24128A6DD5200418201 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
+		6C4FD24328A6DE9100418201 /* bad-request.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bad-request.json"; sourceTree = "<group>"; };
+		6C4FD24728A6DEB400418201 /* categories-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-success.json"; sourceTree = "<group>"; };
+		6C4FD24928A6DEC200418201 /* categories-error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-error.json"; sourceTree = "<group>"; };
+		6C4FD24F28A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsRepositoryTests.swift; sourceTree = "<group>"; };
+		6C4FD25228A6E02700418201 /* classified-ads-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "classified-ads-success.json"; sourceTree = "<group>"; };
+		6C4FD25428A6E05100418201 /* classified-ads-error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "classified-ads-error.json"; sourceTree = "<group>"; };
 		6C6C9D3F28A68128009B8E73 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		6C6C9D4028A68128009B8E73 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		6C6C9D4128A68128009B8E73 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -59,13 +93,13 @@
 		6C6C9D5228A68AE3009B8E73 /* AdCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellViewModel.swift; sourceTree = "<group>"; };
 		6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsHeaderView.swift; sourceTree = "<group>"; };
 		6C6C9D5628A69517009B8E73 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		6C6C9D5828A6B320009B8E73 /* ClassifiedAdsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsRepository.swift; sourceTree = "<group>"; };
 		6CE0267728A5314200CD73C9 /* Lebontest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lebontest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE0267A28A5314200CD73C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CE0268328A5314400CD73C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CE0268628A5314400CD73C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CE0268828A5314400CD73C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CE0268D28A5314400CD73C9 /* LebontestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LebontestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CE0269128A5314400CD73C9 /* LebontestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebontestTests.swift; sourceTree = "<group>"; };
 		6CE0269728A5314400CD73C9 /* LebontestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LebontestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE0269B28A5314400CD73C9 /* LebontestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebontestUITests.swift; sourceTree = "<group>"; };
 		6CE0269D28A5314400CD73C9 /* LebontestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebontestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -106,6 +140,111 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C4FD22428A6BF6700418201 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD22528A6BF7200418201 /* Endpoint.swift */,
+				6C4FD22728A6BF7C00418201 /* HTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6C4FD22928A6C36500418201 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D5828A6B320009B8E73 /* ClassifiedAdsRepository.swift */,
+				6C4FD22B28A6C38C00418201 /* ClassifiedAdsEndpoint.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		6C4FD22A28A6C36F00418201 /* HeaderViews */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */,
+			);
+			path = HeaderViews;
+			sourceTree = "<group>";
+		};
+		6C4FD22F28A6C87300418201 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD23028A6C88100418201 /* CategoryMapper.swift */,
+				6C4FD23728A6CF4300418201 /* CategoryMapperProvider.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6C4FD23428A6C97400418201 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD23528A6C98100418201 /* CategoriesRepository.swift */,
+				6C4FD22D28A6C60F00418201 /* CategoriesEndpoint.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		6C4FD23928A6D82E00418201 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24628A6DEA300418201 /* Files */,
+				6C4FD23A28A6D85300418201 /* CategoriesRepositoryTests.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		6C4FD23E28A6D8E600418201 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24528A6DE9A00418201 /* Files */,
+				6C4FD23F28A6D8F300418201 /* MockHTTPClient.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		6C4FD24528A6DE9A00418201 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24328A6DE9100418201 /* bad-request.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		6C4FD24628A6DEA300418201 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24728A6DEB400418201 /* categories-success.json */,
+				6C4FD24928A6DEC200418201 /* categories-error.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		6C4FD24D28A6DF2B00418201 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24E28A6DF3200418201 /* ClassifiedAds */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		6C4FD24E28A6DF3200418201 /* ClassifiedAds */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD25128A6E01A00418201 /* Files */,
+				6C4FD24F28A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift */,
+			);
+			path = ClassifiedAds;
+			sourceTree = "<group>";
+		};
+		6C4FD25128A6E01A00418201 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD25228A6E02700418201 /* classified-ads-success.json */,
+				6C4FD25428A6E05100418201 /* classified-ads-error.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		6C6C9D3E28A680D5009B8E73 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +287,6 @@
 				6CE0269028A5314400CD73C9 /* LebontestTests */,
 				6CE0269A28A5314400CD73C9 /* LebontestUITests */,
 				6CE0267828A5314200CD73C9 /* Products */,
-				1AC21A96CB4D481FC2A5A196 /* Pods */,
-				207497FA376FCC6D7DFC5596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,10 +305,13 @@
 			children = (
 				6CE026AA28A5338C00CD73C9 /* App */,
 				6CE026AD28A534E200CD73C9 /* Contracts */,
+				6C4FD22428A6BF6700418201 /* Network */,
+				6C4FD23428A6C97400418201 /* Commons */,
 				6C6C9D4D28A68AB1009B8E73 /* UICommons */,
 				6CE026B528A535B100CD73C9 /* Design */,
 				6CE026BE28A5378900CD73C9 /* Features */,
 				6CE026C928A5381E00CD73C9 /* Models */,
+				6C4FD22F28A6C87300418201 /* Helpers */,
 				6CE026CC28A5556A00CD73C9 /* SupportingFiles */,
 				6CE026CF28A5559000CD73C9 /* Ressources */,
 			);
@@ -181,7 +321,10 @@
 		6CE0269028A5314400CD73C9 /* LebontestTests */ = {
 			isa = PBXGroup;
 			children = (
-				6CE0269128A5314400CD73C9 /* LebontestTests.swift */,
+				6C4FD24128A6DD5200418201 /* XCTestCase+Wait.swift */,
+				6C4FD23E28A6D8E600418201 /* Mock */,
+				6C4FD23928A6D82E00418201 /* Commons */,
+				6C4FD24D28A6DF2B00418201 /* Features */,
 			);
 			path = LebontestTests;
 			sourceTree = "<group>";
@@ -245,7 +388,8 @@
 			children = (
 				6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */,
 				6CE026C328A537F000CD73C9 /* ClassifiedAdsViewController.swift */,
-				6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */,
+				6C4FD22A28A6C36F00418201 /* HeaderViews */,
+				6C4FD22928A6C36500418201 /* Repository */,
 			);
 			path = ClassifiedAds;
 			sourceTree = "<group>";
@@ -262,6 +406,7 @@
 		6CE026C928A5381E00CD73C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6C4FD23228A6C8CC00418201 /* Category.swift */,
 				6CE026CA28A5554900CD73C9 /* ClassifiedAd.swift */,
 			);
 			path = Models;
@@ -358,6 +503,7 @@
 					};
 					6CE0268C28A5314400CD73C9 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 6CE0267628A5314200CD73C9;
 					};
 					6CE0269628A5314400CD73C9 = {
@@ -402,6 +548,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C4FD25728A6E0AF00418201 /* classified-ads-error.json in Resources */,
+				6C4FD25628A6E0AB00418201 /* classified-ads-success.json in Resources */,
+				6C4FD24B28A6DF1500418201 /* categories-error.json in Resources */,
+				6C4FD24C28A6DF1800418201 /* categories-success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,20 +571,29 @@
 			files = (
 				6CE026CB28A5554900CD73C9 /* ClassifiedAd.swift in Sources */,
 				6CE026C228A537E500CD73C9 /* ClassifiedAdsViewModel.swift in Sources */,
+				6C6C9D5928A6B320009B8E73 /* ClassifiedAdsRepository.swift in Sources */,
 				6CE026C628A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift in Sources */,
 				6CE026AF28A534F900CD73C9 /* Coordinator.swift in Sources */,
 				6CE026B928A535DC00CD73C9 /* ColorToken.swift in Sources */,
+				6C4FD22C28A6C38C00418201 /* ClassifiedAdsEndpoint.swift in Sources */,
 				6CE026AC28A533CA00CD73C9 /* AppCoordinator.swift in Sources */,
+				6C4FD23128A6C88100418201 /* CategoryMapper.swift in Sources */,
+				6C4FD23628A6C98100418201 /* CategoriesRepository.swift in Sources */,
 				6CE026C428A537F000CD73C9 /* ClassifiedAdsViewController.swift in Sources */,
+				6C4FD22E28A6C60F00418201 /* CategoriesEndpoint.swift in Sources */,
 				6C6C9D5728A69517009B8E73 /* Asset.swift in Sources */,
 				6C6C9D5528A69361009B8E73 /* AdsHeaderView.swift in Sources */,
+				6C4FD22628A6BF7200418201 /* Endpoint.swift in Sources */,
+				6C4FD23328A6C8CC00418201 /* Category.swift in Sources */,
 				6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */,
 				6CE026B728A535BE00CD73C9 /* DesignToken.swift in Sources */,
 				6CE0267B28A5314200CD73C9 /* AppDelegate.swift in Sources */,
 				6CE026BB28A5360400CD73C9 /* FontBook.swift in Sources */,
 				6C6C9D5328A68AE3009B8E73 /* AdCellViewModel.swift in Sources */,
 				6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */,
+				6C4FD22828A6BF7C00418201 /* HTTPClient.swift in Sources */,
 				6CE026C828A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift in Sources */,
+				6C4FD23828A6CF4300418201 /* CategoryMapperProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +601,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CE0269228A5314400CD73C9 /* LebontestTests.swift in Sources */,
+				6C4FD25028A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift in Sources */,
+				6C4FD24028A6D8F300418201 /* MockHTTPClient.swift in Sources */,
+				6C4FD24428A6DE9100418201 /* bad-request.json in Sources */,
+				6C4FD23B28A6D85300418201 /* CategoriesRepositoryTests.swift in Sources */,
+				6C4FD24228A6DD5200418201 /* XCTestCase+Wait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,15 +831,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZKL7YXM7BV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = leboncoin.test.com.LeBonTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lebontest.app/Lebontest";
@@ -688,11 +858,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZKL7YXM7BV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = leboncoin.test.com.LeBonTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -100,7 +100,7 @@ final class ClassifiedAdsViewController: UIViewController {
 
     func updateData(_ data: ClassifiedAdsViewModel.Data) {
         DispatchQueue.main.async {
-            self.cellViewModels = data.cells
+            self.cellViewModels = data.cellViewModels
         }
     }
 }
