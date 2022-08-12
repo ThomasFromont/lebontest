@@ -35,7 +35,18 @@ final class AppCoordinator: Coordinator {
         completion?()
     }
 
-    private func showClassifiedAds() {}
+    private func showClassifiedAds() {
+        let viewModel = ClassifiedAdsViewModel()
+        viewModel.delegate = self
+        let viewController = ClassifiedAdsViewController(viewModel: viewModel, designToken: designToken)
+        navigationController.viewControllers = [viewController]
+    }
 
     private func showClassifiedAdDetails(_ classifiedAd: ClassifiedAd) {}
+}
+
+extension AppCoordinator: ClassifiedAdsViewModelDelegate {
+    func didSelect(classifiedAd: ClassifiedAd, from: ClassifiedAdsViewModel) {
+        showClassifiedAdDetails(classifiedAd)
+    }
 }

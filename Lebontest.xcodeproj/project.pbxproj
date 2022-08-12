@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C6C9D4728A688FC009B8E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4928A688FC009B8E73 /* Localizable.strings */; };
+		6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4B28A6899F009B8E73 /* Translation.swift */; };
+		6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5028A68ADC009B8E73 /* AdCell.swift */; };
+		6C6C9D5328A68AE3009B8E73 /* AdCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5228A68AE3009B8E73 /* AdCellViewModel.swift */; };
+		6C6C9D5528A69361009B8E73 /* AdsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */; };
+		6C6C9D5728A69517009B8E73 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5628A69517009B8E73 /* Asset.swift */; };
 		6CE0267B28A5314200CD73C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0267A28A5314200CD73C9 /* AppDelegate.swift */; };
 		6CE0268428A5314400CD73C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0268328A5314400CD73C9 /* Assets.xcassets */; };
 		6CE0268728A5314400CD73C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0268528A5314400CD73C9 /* LaunchScreen.storyboard */; };
@@ -19,7 +25,7 @@
 		6CE026B928A535DC00CD73C9 /* ColorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026B828A535DC00CD73C9 /* ColorToken.swift */; };
 		6CE026BB28A5360400CD73C9 /* FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026BA28A5360400CD73C9 /* FontBook.swift */; };
 		6CE026C228A537E500CD73C9 /* ClassifiedAdsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */; };
-		6CE026C428A537F000CD73C9 /* ClassifiedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026C328A537F000CD73C9 /* ClassifiedAdViewController.swift */; };
+		6CE026C428A537F000CD73C9 /* ClassifiedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026C328A537F000CD73C9 /* ClassifiedAdsViewController.swift */; };
 		6CE026C628A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026C528A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift */; };
 		6CE026C828A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026C728A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift */; };
 		6CE026CB28A5554900CD73C9 /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE026CA28A5554900CD73C9 /* ClassifiedAd.swift */; };
@@ -43,6 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C6C9D3F28A68128009B8E73 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		6C6C9D4028A68128009B8E73 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		6C6C9D4128A68128009B8E73 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		6C6C9D4828A688FC009B8E73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C6C9D4A28A6893D009B8E73 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C6C9D4B28A6899F009B8E73 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		6C6C9D5028A68ADC009B8E73 /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		6C6C9D5228A68AE3009B8E73 /* AdCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellViewModel.swift; sourceTree = "<group>"; };
+		6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsHeaderView.swift; sourceTree = "<group>"; };
+		6C6C9D5628A69517009B8E73 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		6CE0267728A5314200CD73C9 /* Lebontest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lebontest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE0267A28A5314200CD73C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CE0268328A5314400CD73C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +75,7 @@
 		6CE026B828A535DC00CD73C9 /* ColorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorToken.swift; sourceTree = "<group>"; };
 		6CE026BA28A5360400CD73C9 /* FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontBook.swift; sourceTree = "<group>"; };
 		6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsViewModel.swift; sourceTree = "<group>"; };
-		6CE026C328A537F000CD73C9 /* ClassifiedAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdViewController.swift; sourceTree = "<group>"; };
+		6CE026C328A537F000CD73C9 /* ClassifiedAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsViewController.swift; sourceTree = "<group>"; };
 		6CE026C528A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdDetailsViewModel.swift; sourceTree = "<group>"; };
 		6CE026C728A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdDetailsViewController.swift; sourceTree = "<group>"; };
 		6CE026CA28A5554900CD73C9 /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
@@ -90,6 +106,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C6C9D3E28A680D5009B8E73 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D3F28A68128009B8E73 /* OpenSans-Light.ttf */,
+				6C6C9D4028A68128009B8E73 /* OpenSans-Regular.ttf */,
+				6C6C9D4128A68128009B8E73 /* OpenSans-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6C6C9D4D28A68AB1009B8E73 /* UICommons */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D4E28A68ABC009B8E73 /* Cells */,
+			);
+			path = UICommons;
+			sourceTree = "<group>";
+		};
+		6C6C9D4E28A68ABC009B8E73 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D4F28A68AD0009B8E73 /* Ad */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6C6C9D4F28A68AD0009B8E73 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C9D5028A68ADC009B8E73 /* AdCell.swift */,
+				6C6C9D5228A68AE3009B8E73 /* AdCellViewModel.swift */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		6CE0266E28A5314200CD73C9 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +148,8 @@
 				6CE0269028A5314400CD73C9 /* LebontestTests */,
 				6CE0269A28A5314400CD73C9 /* LebontestUITests */,
 				6CE0267828A5314200CD73C9 /* Products */,
+				1AC21A96CB4D481FC2A5A196 /* Pods */,
+				207497FA376FCC6D7DFC5596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +168,7 @@
 			children = (
 				6CE026AA28A5338C00CD73C9 /* App */,
 				6CE026AD28A534E200CD73C9 /* Contracts */,
+				6C6C9D4D28A68AB1009B8E73 /* UICommons */,
 				6CE026B528A535B100CD73C9 /* Design */,
 				6CE026BE28A5378900CD73C9 /* Features */,
 				6CE026C928A5381E00CD73C9 /* Models */,
@@ -172,6 +226,7 @@
 				6CE026B628A535BE00CD73C9 /* DesignToken.swift */,
 				6CE026B828A535DC00CD73C9 /* ColorToken.swift */,
 				6CE026BA28A5360400CD73C9 /* FontBook.swift */,
+				6C6C9D3E28A680D5009B8E73 /* Fonts */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -189,7 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */,
-				6CE026C328A537F000CD73C9 /* ClassifiedAdViewController.swift */,
+				6CE026C328A537F000CD73C9 /* ClassifiedAdsViewController.swift */,
+				6C6C9D5428A69361009B8E73 /* AdsHeaderView.swift */,
 			);
 			path = ClassifiedAds;
 			sourceTree = "<group>";
@@ -223,7 +279,10 @@
 		6CE026CF28A5559000CD73C9 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				6C6C9D5628A69517009B8E73 /* Asset.swift */,
+				6C6C9D4B28A6899F009B8E73 /* Translation.swift */,
 				6CE0268328A5314400CD73C9 /* Assets.xcassets */,
+				6C6C9D4928A688FC009B8E73 /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -314,6 +373,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6CE0266E28A5314200CD73C9;
 			productRefGroup = 6CE0267828A5314200CD73C9 /* Products */;
@@ -333,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE0268728A5314400CD73C9 /* LaunchScreen.storyboard in Resources */,
+				6C6C9D4728A688FC009B8E73 /* Localizable.strings in Resources */,
 				6CE0268428A5314400CD73C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,10 +425,15 @@
 				6CE026AF28A534F900CD73C9 /* Coordinator.swift in Sources */,
 				6CE026B928A535DC00CD73C9 /* ColorToken.swift in Sources */,
 				6CE026AC28A533CA00CD73C9 /* AppCoordinator.swift in Sources */,
-				6CE026C428A537F000CD73C9 /* ClassifiedAdViewController.swift in Sources */,
+				6CE026C428A537F000CD73C9 /* ClassifiedAdsViewController.swift in Sources */,
+				6C6C9D5728A69517009B8E73 /* Asset.swift in Sources */,
+				6C6C9D5528A69361009B8E73 /* AdsHeaderView.swift in Sources */,
+				6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */,
 				6CE026B728A535BE00CD73C9 /* DesignToken.swift in Sources */,
 				6CE0267B28A5314200CD73C9 /* AppDelegate.swift in Sources */,
 				6CE026BB28A5360400CD73C9 /* FontBook.swift in Sources */,
+				6C6C9D5328A68AE3009B8E73 /* AdCellViewModel.swift in Sources */,
+				6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */,
 				6CE026C828A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +471,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6C6C9D4928A688FC009B8E73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C6C9D4828A688FC009B8E73 /* en */,
+				6C6C9D4A28A6893D009B8E73 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6CE0268528A5314400CD73C9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -480,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
