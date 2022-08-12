@@ -11,7 +11,7 @@ final class ClassifiedAdsViewController: UIViewController {
 
     private enum Constant {
         static let headerHeight: CGFloat = 40
-        static let cellHeight: CGFloat = 60
+        static let cellHeight: CGFloat = 326
         static let collectionViewInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
 
@@ -60,11 +60,11 @@ final class ClassifiedAdsViewController: UIViewController {
 
     // MARK: - Setup
 
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(collectionView)
     }
 
-    func setupStyle() {
+    private func setupStyle() {
         view.backgroundColor = designToken.colorToken.background
         collectionView.backgroundColor = designToken.colorToken.background
 
@@ -74,7 +74,7 @@ final class ClassifiedAdsViewController: UIViewController {
         collectionView.delegate = self
     }
 
-    func setupLayout() {
+    private func setupLayout() {
         collectionView.contentInset = Constant.collectionViewInsets
 
         guard let collectionViewSuperview = collectionView.superview else {
@@ -82,23 +82,23 @@ final class ClassifiedAdsViewController: UIViewController {
         }
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        let collectionViewConstraints = [
+        let constraints = [
             collectionView.topAnchor.constraint(equalTo: collectionViewSuperview.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: collectionViewSuperview.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: collectionViewSuperview.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: collectionViewSuperview.rightAnchor),
         ]
-        NSLayoutConstraint.activate(collectionViewConstraints)
+        NSLayoutConstraint.activate(constraints)
     }
 
-    func bind() {
+    private func bind() {
         navigationItem.backButtonTitle = viewModel.navigationTitle
 
         viewModel.bind = updateData
         viewModel.fetch()
     }
 
-    func updateData(_ data: ClassifiedAdsViewModel.Data) {
+    private func updateData(_ data: ClassifiedAdsViewModel.Data) {
         DispatchQueue.main.async {
             self.cellViewModels = data.cellViewModels
         }

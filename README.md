@@ -28,3 +28,4 @@ This application contains only two features, the classified ads list and the cla
 - ~1h to read the subject, initialised the project and setup my environment
 - ~2h to implement the basis of the Design System (Colors, Font) and create the first VM + VC with a header
 - ~2h to implement the API Calls with Tests
+- ~2h to create the item Design and display the list

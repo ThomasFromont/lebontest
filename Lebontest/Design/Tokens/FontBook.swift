@@ -11,14 +11,16 @@ import Foundation
 protocol FontTokenType: AnyObject {
     var title: UIFont { get }
     var subtitle: UIFont { get }
+    var tag: UIFont { get }
     var info: UIFont { get }
 }
 
 class FontToken: FontTokenType {
 
-    var title: UIFont { return font(of: 16, with: UIFont.Weight.semibold) }
-    var subtitle: UIFont { return font(of: 12, with: UIFont.Weight.regular) }
-    var info: UIFont { return font(of: 12, with: UIFont.Weight.light) }
+    var title: UIFont { return font(of: 18, with: UIFont.Weight.semibold) }
+    var subtitle: UIFont { return font(of: 14, with: UIFont.Weight.regular) }
+    var tag: UIFont { return font(of: 11, with: UIFont.Weight.semibold) }
+    var info: UIFont { return font(of: 12, with: UIFont.Weight.regular) }
 
     // MARK: - Private
 

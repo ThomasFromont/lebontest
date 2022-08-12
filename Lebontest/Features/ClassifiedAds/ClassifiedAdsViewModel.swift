@@ -19,6 +19,8 @@ final class ClassifiedAdsViewModel {
 
     private let classifiedAdsRepository: ClassifiedAdsRepositoryType
     private let categoryMapperProvider: CategoryMapperProviderType
+    private let numberFormatter: NumberFormatterType
+    private let imageProvider: ImageProviderType
 
     weak var delegate: ClassifiedAdsViewModelDelegate?
 
@@ -51,10 +53,15 @@ final class ClassifiedAdsViewModel {
 
     init(
         classifiedAdsRepository: ClassifiedAdsRepositoryType,
-        categoryMapperProvider: CategoryMapperProviderType
+        categoryMapperProvider: CategoryMapperProviderType,
+        numberFormatter: NumberFormatterType,
+        imageProvider: ImageProviderType
     ) {
         self.classifiedAdsRepository = classifiedAdsRepository
         self.categoryMapperProvider = categoryMapperProvider
+        self.numberFormatter = numberFormatter
+        self.imageProvider = imageProvider
+
         navigationTitle = Translation.ClassifiedAds.navigationTitle
     }
 
@@ -65,8 +72,21 @@ final class ClassifiedAdsViewModel {
     }
 
     private func buildCellViewModels(classifiedAds: [ClassifiedAd], categoryMapper: CategoryMapper) -> [AdCellViewModel] {
-        classifiedAds.map { _ in
-            AdCellViewModel()
+        let numberFormatter = self.numberFormatter
+        let imageProvider = self.imageProvider
+
+        let cellViewModels = classifiedAds.map { [weak self] classifiedAd -> AdCellViewModel in
+            let onSelect: (() -> Void) = { self?.selectClassifiedAd(classifiedAd) }
+            let cellViewModel = AdCellViewModel(
+                classifiedAd: classifiedAd,
+                category: categoryMapper.getCategory(id: classifiedAd.categoryId),
+                numberFormatter: numberFormatter,
+                imageProvider: imageProvider,
+                onSelect: onSelect
+            )
+            return cellViewModel
         }
+
+        return cellViewModels
     }
 }

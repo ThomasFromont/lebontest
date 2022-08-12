@@ -5,3 +5,4 @@
 /* ClassifiedAds */
 
 "classified_ads.navigation_title" = "Annonces";
+"classified_ads.cell.urgent" = "URGENT";

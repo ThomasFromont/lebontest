@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = AppCoordinator(
             window: window,
             httpClient: HTTPClient(),
+            numberFormatter: NumberFormatter(),
+            imageProvider: ImageProvider(),
             designToken: DesignToken.shared
         )
         coordinator?.start()

@@ -10,14 +10,14 @@ import Foundation
 import Foundation
 
 protocol CategoryMapperType: AnyObject {
-    func getCategoryName(id: Int) -> Category?
+    func getCategory(id: Int) -> Category?
 }
 
 class CategoryMapper: CategoryMapperType {
 
     // MARK: - Properties
 
-    private var categories = [Category]()
+    private let categories: [Category]
     private let dispatchGroup = DispatchGroup()
 
     // MARK: - Initializer
@@ -28,7 +28,7 @@ class CategoryMapper: CategoryMapperType {
 
     // MARK: - CategoryMapperType
 
-    func getCategoryName(id: Int) -> Category? {
+    func getCategory(id: Int) -> Category? {
         return categories.first(where: { $0.id == id })
     }
 }

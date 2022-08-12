@@ -9,9 +9,13 @@ import UIKit
 
 final class AdCell: UICollectionViewCell {
 
-    private let subview = UIView()
+    private let adCard = AdCard(designToken: DesignToken.shared)
 
-    var viewModel: AdCellViewModel?
+    var viewModel: AdCellViewModel? {
+        didSet {
+            bind()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,27 +29,37 @@ final class AdCell: UICollectionViewCell {
     }
 
     private func setupViews() {
-        contentView.addSubview(subview)
+        contentView.addSubview(adCard)
     }
 
     private func setupLayout() {
         layoutMargins = .zero
 
-        guard let subviewSuperview = subview.superview else {
-            return assertionFailure("Image View has no super view")
-        }
-
-        subview.translatesAutoresizingMaskIntoConstraints = false
+        adCard.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            subview.topAnchor.constraint(equalTo: subviewSuperview.topAnchor),
-            subview.bottomAnchor.constraint(equalTo: subviewSuperview.bottomAnchor),
-            subview.leftAnchor.constraint(equalTo: subviewSuperview.leftAnchor),
-            subview.rightAnchor.constraint(equalTo: subviewSuperview.rightAnchor),
+            adCard.topAnchor.constraint(equalTo: contentView.topAnchor),
+            adCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            adCard.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            adCard.rightAnchor.constraint(equalTo: contentView.rightAnchor),
         ]
-        NSLayoutConstraint.activate(constraints)}
+        NSLayoutConstraint.activate(constraints)
+    }
 
     private func setupStyle() {
         contentView.backgroundColor = .clear
-        subview.backgroundColor = DesignToken.shared.colorToken.textHighlighted
+    }
+
+    private func bind() {
+        adCard.data = viewModel.map { .init(title: $0.title, subtitle: $0.subtitle, tag: $0.tag, info: $0.info) }
+        viewModel?.bind = updateData
+        viewModel?.fetch()
+    }
+
+    private func updateData(_ data: AdCellViewModel.Data) {
+        DispatchQueue.main.async {
+            self.adCard.data = self.viewModel.map {
+                .init(image: data.image, title: $0.title, subtitle: $0.subtitle, tag: $0.tag, info: $0.info)
+            }
+        }
     }
 }

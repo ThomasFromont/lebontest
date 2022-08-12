@@ -16,11 +16,13 @@ class CategoryMapperProvider: CategoryMapperProviderType {
     // MARK: - Properties
 
     private var categoryMapper = CategoryMapper(categories: [])
+    private let categoriesRepository: CategoriesRepositoryType
     private let dispatchGroup = DispatchGroup()
 
     // MARK: - Initializer
 
     init(categoriesRepository: CategoriesRepositoryType) {
+        self.categoriesRepository = categoriesRepository
         let dispatchGroup = DispatchGroup()
 
         dispatchGroup.enter()

@@ -12,6 +12,10 @@ import Foundation
 internal enum Translation {
     enum ClassifiedAds {
         static let navigationTitle = Translation.tr("Localizable", "classified_ads.navigation_title")
+
+        enum Cell {
+            static let urgent = Translation.tr("Localizable", "classified_ads.cell.urgent")
+        }
     }
 }
 

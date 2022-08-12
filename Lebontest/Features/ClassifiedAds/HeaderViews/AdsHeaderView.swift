@@ -34,13 +34,13 @@ class AdsHeaderView: UICollectionReusableView {
         }
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        let imageViewConstraints = [
+        let constraints = [
             imageView.topAnchor.constraint(equalTo: imageViewSuperview.topAnchor, constant: -8),
             imageView.bottomAnchor.constraint(equalTo: imageViewSuperview.bottomAnchor, constant: -8),
             imageView.leftAnchor.constraint(equalTo: imageViewSuperview.leftAnchor),
             imageView.rightAnchor.constraint(equalTo: imageViewSuperview.rightAnchor),
         ]
-        NSLayoutConstraint.activate(imageViewConstraints)
+        NSLayoutConstraint.activate(constraints)
     }
 
     private func setupStyle() {

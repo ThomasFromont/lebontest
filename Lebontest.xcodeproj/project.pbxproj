@@ -24,6 +24,10 @@
 		6C4FD25028A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD24F28A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift */; };
 		6C4FD25628A6E0AB00418201 /* classified-ads-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD25228A6E02700418201 /* classified-ads-success.json */; };
 		6C4FD25728A6E0AF00418201 /* classified-ads-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4FD25428A6E05100418201 /* classified-ads-error.json */; };
+		6C4FD25B28A6F59400418201 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD25A28A6F59400418201 /* NumberFormatter.swift */; };
+		6C4FD25D28A6FA4E00418201 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD25C28A6FA4E00418201 /* ImageProvider.swift */; };
+		6C4FD26128A6FF5900418201 /* AdCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD26028A6FF5900418201 /* AdCard.swift */; };
+		6C4FD26428A6FF8800418201 /* HasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD26328A6FF8800418201 /* HasData.swift */; };
 		6C6C9D4728A688FC009B8E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4928A688FC009B8E73 /* Localizable.strings */; };
 		6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4B28A6899F009B8E73 /* Translation.swift */; };
 		6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5028A68ADC009B8E73 /* AdCell.swift */; };
@@ -83,6 +87,10 @@
 		6C4FD24F28A6DF4200418201 /* ClassifiedAdsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsRepositoryTests.swift; sourceTree = "<group>"; };
 		6C4FD25228A6E02700418201 /* classified-ads-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "classified-ads-success.json"; sourceTree = "<group>"; };
 		6C4FD25428A6E05100418201 /* classified-ads-error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "classified-ads-error.json"; sourceTree = "<group>"; };
+		6C4FD25A28A6F59400418201 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		6C4FD25C28A6FA4E00418201 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		6C4FD26028A6FF5900418201 /* AdCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCard.swift; sourceTree = "<group>"; };
+		6C4FD26328A6FF8800418201 /* HasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasData.swift; sourceTree = "<group>"; };
 		6C6C9D3F28A68128009B8E73 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		6C6C9D4028A68128009B8E73 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		6C6C9D4128A68128009B8E73 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -178,8 +186,9 @@
 		6C4FD23428A6C97400418201 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				6C4FD23528A6C98100418201 /* CategoriesRepository.swift */,
-				6C4FD22D28A6C60F00418201 /* CategoriesEndpoint.swift */,
+				6C4FD25828A6F57E00418201 /* Formatters */,
+				6C4FD25E28A6FA6200418201 /* Providers */,
+				6C4FD25928A6F58600418201 /* Repositories */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -243,6 +252,47 @@
 				6C4FD25428A6E05100418201 /* classified-ads-error.json */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		6C4FD25828A6F57E00418201 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD25A28A6F59400418201 /* NumberFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		6C4FD25928A6F58600418201 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD23528A6C98100418201 /* CategoriesRepository.swift */,
+				6C4FD22D28A6C60F00418201 /* CategoriesEndpoint.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		6C4FD25E28A6FA6200418201 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD25C28A6FA4E00418201 /* ImageProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		6C4FD25F28A6FF5000418201 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD26028A6FF5900418201 /* AdCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6C4FD26228A6FF7B00418201 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD26328A6FF8800418201 /* HasData.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		6C6C9D3E28A680D5009B8E73 /* Fonts */ = {
@@ -358,6 +408,8 @@
 		6CE026B528A535B100CD73C9 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				6C4FD26228A6FF7B00418201 /* Protocols */,
+				6C4FD25F28A6FF5000418201 /* Views */,
 				6CE026BC28A536CA00CD73C9 /* Tokens */,
 			);
 			path = Design;
@@ -386,8 +438,8 @@
 		6CE026BF28A5379A00CD73C9 /* ClassifiedAds */ = {
 			isa = PBXGroup;
 			children = (
-				6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */,
 				6CE026C328A537F000CD73C9 /* ClassifiedAdsViewController.swift */,
+				6CE026C128A537E500CD73C9 /* ClassifiedAdsViewModel.swift */,
 				6C4FD22A28A6C36F00418201 /* HeaderViews */,
 				6C4FD22928A6C36500418201 /* Repository */,
 			);
@@ -579,6 +631,7 @@
 				6CE026AC28A533CA00CD73C9 /* AppCoordinator.swift in Sources */,
 				6C4FD23128A6C88100418201 /* CategoryMapper.swift in Sources */,
 				6C4FD23628A6C98100418201 /* CategoriesRepository.swift in Sources */,
+				6C4FD25B28A6F59400418201 /* NumberFormatter.swift in Sources */,
 				6CE026C428A537F000CD73C9 /* ClassifiedAdsViewController.swift in Sources */,
 				6C4FD22E28A6C60F00418201 /* CategoriesEndpoint.swift in Sources */,
 				6C6C9D5728A69517009B8E73 /* Asset.swift in Sources */,
@@ -586,6 +639,7 @@
 				6C4FD22628A6BF7200418201 /* Endpoint.swift in Sources */,
 				6C4FD23328A6C8CC00418201 /* Category.swift in Sources */,
 				6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */,
+				6C4FD26428A6FF8800418201 /* HasData.swift in Sources */,
 				6CE026B728A535BE00CD73C9 /* DesignToken.swift in Sources */,
 				6CE0267B28A5314200CD73C9 /* AppDelegate.swift in Sources */,
 				6CE026BB28A5360400CD73C9 /* FontBook.swift in Sources */,
@@ -594,6 +648,8 @@
 				6C4FD22828A6BF7C00418201 /* HTTPClient.swift in Sources */,
 				6CE026C828A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift in Sources */,
 				6C4FD23828A6CF4300418201 /* CategoryMapperProvider.swift in Sources */,
+				6C4FD26128A6FF5900418201 /* AdCard.swift in Sources */,
+				6C4FD25D28A6FA4E00418201 /* ImageProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
