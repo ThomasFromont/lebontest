@@ -29,3 +29,4 @@ This application contains only two features, the classified ads list and the cla
 - ~2h to implement the basis of the Design System (Colors, Font) and create the first VM + VC with a header
 - ~2h to implement the API Calls with Tests
 - ~2h to create the item Design and display the list
+- ~1/2h to implement the testing of the `ClassifiedAdsViewModel`
