@@ -19,9 +19,13 @@ final class ClassifiedAdDetailsViewController: UIViewController {
     private let designToken: DesignToken
 
     private let scrollView = UIScrollView()
+    private let stackView = UIStackView()
     private let statusBarBackground = UIView()
     private let closeButton: CloseButton
     private let headerView = UIImageView()
+    private let adDetails: AdDetails
+    private let descriptionView: ItemInfo
+    private let siretView: ItemInfo
 
     // MARK: - Initializer
 
@@ -29,7 +33,10 @@ final class ClassifiedAdDetailsViewController: UIViewController {
         self.viewModel = viewModel
         self.designToken = designToken
 
-        self.closeButton = CloseButton(designToken: designToken)
+        closeButton = CloseButton(designToken: designToken)
+        adDetails = AdDetails(designToken: designToken)
+        descriptionView = ItemInfo(designToken: designToken)
+        siretView = ItemInfo(designToken: designToken)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -53,13 +60,25 @@ final class ClassifiedAdDetailsViewController: UIViewController {
     private func setupViews() {
         view.addSubview(scrollView)
         view.addSubview(statusBarBackground)
+        view.addSubview(closeButton)
 
-        scrollView.addSubview(headerView)
-        scrollView.addSubview(closeButton)
+        scrollView.addSubview(stackView)
+
+        stackView.addArrangedSubview(headerView)
+        stackView.addArrangedSubview(adDetails)
+        stackView.addArrangedSubview(Divider(designToken: designToken))
+        stackView.addArrangedSubview(descriptionView)
+        if viewModel.siret != nil {
+            stackView.addArrangedSubview(Divider(designToken: designToken))
+            stackView.addArrangedSubview(siretView)
+        }
     }
 
     private func setupStyle() {
         view.backgroundColor = designToken.colorToken.background
+
+        scrollView.alwaysBounceVertical = true
+        stackView.axis = .vertical
 
         headerView.contentMode = .scaleAspectFill
         statusBarBackground.backgroundColor = designToken.colorToken.background.withAlphaComponent(0.5)
@@ -67,7 +86,7 @@ final class ClassifiedAdDetailsViewController: UIViewController {
 
     private func setupLayout() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         statusBarBackground.translatesAutoresizingMaskIntoConstraints = false
         closeButton.translatesAutoresizingMaskIntoConstraints = false
 
@@ -77,9 +96,12 @@ final class ClassifiedAdDetailsViewController: UIViewController {
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
 
-            headerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            headerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            headerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+
             headerView.widthAnchor.constraint(equalTo: headerView.heightAnchor),
 
             statusBarBackground.topAnchor.constraint(equalTo: view.topAnchor),
@@ -103,6 +125,15 @@ final class ClassifiedAdDetailsViewController: UIViewController {
         navigationItem.backButtonTitle = viewModel.navigationTitle
 
         closeButton.addTarget(self, action: #selector(closeClicked), for: .touchUpInside)
+        adDetails.data = .init(
+            title: viewModel.title,
+            subtitle: viewModel.price,
+            category: viewModel.category,
+            info: viewModel.date,
+            tag: viewModel.tag
+        )
+        descriptionView.data = .init(title: viewModel.description.title, subtitle: viewModel.description.subtitle)
+        siretView.data = viewModel.siret.map { .init(title: $0.title, subtitle: $0.subtitle) }
 
         viewModel.bind = updateData
         viewModel.fetch()

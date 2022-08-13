@@ -76,10 +76,14 @@ final class ClassifiedAdsViewModel {
         let imageProvider = self.imageProvider
 
         let cellViewModels = classifiedAds.map { [weak self] classifiedAd -> AdCellViewModel in
-            let onSelect: (() -> Void) = { self?.selectClassifiedAd(classifiedAd) }
+            var classifiedAd = classifiedAd
+            classifiedAd.categoryName = categoryMapper.getCategory(id: classifiedAd.categoryId)?.name
+
+            let onSelect: (() -> Void) = {
+                self?.selectClassifiedAd(classifiedAd)
+            }
             let cellViewModel = AdCellViewModel(
                 classifiedAd: classifiedAd,
-                category: categoryMapper.getCategory(id: classifiedAd.categoryId),
                 numberFormatter: numberFormatter,
                 imageProvider: imageProvider,
                 onSelect: onSelect

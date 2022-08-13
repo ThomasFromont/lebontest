@@ -10,6 +10,13 @@ import Foundation
 // MARK: - Translation
 
 internal enum Translation {
+
+    enum DateFormatter {
+        static let dayWithTime = Translation.tr("Localizable", "date_formatter.dayWithTime")
+        static let todayWithTime = Translation.tr("Localizable", "date_formatter.todayWithTime")
+        static let yesterdayWithTime = Translation.tr("Localizable", "date_formatter.yesterdayWithTime")
+    }
+
     enum ClassifiedAds {
         static let navigationTitle = Translation.tr("Localizable", "classified_ads.navigation_title")
 
@@ -20,6 +27,12 @@ internal enum Translation {
 
     enum ClassifiedAdDetails {
         static let navigationTitle = Translation.tr("Localizable", "classified_ad_details.navigation_title")
+        static let urgent = Translation.tr("Localizable", "classified_ad_details.urgent")
+        static let description = Translation.tr("Localizable", "classified_ad_details.description")
+
+        static func siret(_ arg: String) -> String {
+          return Translation.tr("Localizable", "classified_ad_details.siret", arg)
+        }
     }
 }
 

@@ -11,6 +11,7 @@ struct ClassifiedAd: Decodable {
     let id: Int
     let title: String
     let categoryId: Int
+    var categoryName: String?
     let creationDate: Date
     let description: String
     let imagesUrl: ImagesURL

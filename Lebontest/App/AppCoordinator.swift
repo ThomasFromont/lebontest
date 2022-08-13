@@ -12,6 +12,7 @@ final class AppCoordinator: Coordinator {
     private let window: UIWindow?
     private let httpClient: HTTPClientType
     private let categoryMapperProvider: CategoryMapperProviderType
+    private let dateFormatter: DateFormatterType
     private let numberFormatter: NumberFormatterType
     private let imageProvider: ImageProviderType
     private let designToken: DesignToken
@@ -22,13 +23,15 @@ final class AppCoordinator: Coordinator {
     init(
         window: UIWindow?,
         httpClient: HTTPClientType,
-        numberFormatter: NumberFormatter,
+        dateFormatter: DateFormatterType,
+        numberFormatter: NumberFormatterType,
         imageProvider: ImageProviderType,
         designToken: DesignToken
     ) {
         self.window = window
         self.httpClient = httpClient
         self.categoryMapperProvider = CategoryMapperProvider(categoriesRepository: CategoriesRepository(httpClient: httpClient))
+        self.dateFormatter = dateFormatter
         self.numberFormatter = numberFormatter
         self.imageProvider = imageProvider
         self.designToken = designToken
@@ -62,6 +65,7 @@ final class AppCoordinator: Coordinator {
         let viewModel = ClassifiedAdDetailsViewModel(
             classifiedAd: classifiedAd,
             categoryMapperProvider: categoryMapperProvider,
+            dateFormatter: dateFormatter,
             numberFormatter: numberFormatter,
             imageProvider: imageProvider
         )

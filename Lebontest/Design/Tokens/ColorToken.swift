@@ -9,9 +9,9 @@ import UIKit
 
 protocol ColorTokenType: AnyObject {
     var background: UIColor { get }
+    var divider: UIColor { get }
 
     var textPrimary: UIColor { get }
-    var textSecondary: UIColor { get }
     var textHighlighted: UIColor { get }
     var backgroundHighlighted: UIColor { get }
 }
@@ -31,12 +31,12 @@ class ColorToken: ColorTokenType {
     var background: UIColor {
         return ColorToken.color(lightHex: ColorPalette.white, darkHex: ColorPalette.black)
     }
+    var divider: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.grey, darkHex: ColorPalette.grey)
+    }
 
     var textPrimary: UIColor {
         return ColorToken.color(lightHex: ColorPalette.black, darkHex: ColorPalette.white)
-    }
-    var textSecondary: UIColor {
-        return ColorToken.color(lightHex: ColorPalette.grey, darkHex: ColorPalette.grey)
     }
     var textHighlighted: UIColor {
         return ColorToken.color(lightHex: ColorPalette.orangeDark, darkHex: ColorPalette.orangeLight)

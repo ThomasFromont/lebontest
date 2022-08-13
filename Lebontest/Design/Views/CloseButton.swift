@@ -37,7 +37,7 @@ final class CloseButton: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? designToken.colorToken.textSecondary : designToken.colorToken.background
+            backgroundColor = isHighlighted ? designToken.colorToken.divider : designToken.colorToken.background
         }
     }
 

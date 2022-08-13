@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = AppCoordinator(
             window: window,
             httpClient: HTTPClient(),
+            dateFormatter: DateFormatter(),
             numberFormatter: NumberFormatter(),
             imageProvider: ImageProvider(),
             designToken: DesignToken.shared

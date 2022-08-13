@@ -1,5 +1,11 @@
 /* ---------- Commons ---------- */
 
+/* DateFormatter */
+
+"date_formatter.dayWithTime" = "dd/MM/yyyy à HH:mm";
+"date_formatter.todayWithTime" = "aujourd'hui à HH:mm";
+"date_formatter.yesterdayWithTime" = "hier à HH:mm";
+
 /* ---------- Features ---------- */
 
 /* ClassifiedAds */
@@ -10,3 +16,6 @@
 /* ClassifiedAdDetails */
 
 "classified_ad_details.navigation_title" = "Annonce détails";
+"classified_ad_details.urgent" = "Urgent";
+"classified_ad_details.description" = "Description";
+"classified_ad_details.siret" = "N° Siret: %@";

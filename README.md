@@ -31,3 +31,4 @@ This application contains only two features, the classified ads list and the cla
 - ~2h to create the item Design and display the list
 - ~1/2h to implement the testing of the `ClassifiedAdsViewModel`
 - ~1h to create the second VM + VC with the image header
+- ~2h display the details on the classified ad details with Tests

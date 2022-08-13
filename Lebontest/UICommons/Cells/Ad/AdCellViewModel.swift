@@ -43,7 +43,6 @@ final class AdCellViewModel {
 
     init(
         classifiedAd: ClassifiedAd,
-        category: Category?,
         numberFormatter: NumberFormatterType,
         imageProvider: ImageProviderType,
         onSelect: (() -> Void)? = nil
@@ -51,7 +50,7 @@ final class AdCellViewModel {
         self.classifiedAd = classifiedAd
         self.title = classifiedAd.title
         self.subtitle = numberFormatter.format(value: classifiedAd.price, minDigits: 0, maxDigits: 2) + " €"
-        self.info = category?.name
+        self.info = classifiedAd.categoryName
         self.tag = classifiedAd.isUrgent ? Translation.ClassifiedAds.Cell.urgent : nil
         self.imageProvider = imageProvider
         self.onSelect = onSelect
