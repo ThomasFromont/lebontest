@@ -77,16 +77,12 @@ final class ClassifiedAdsViewController: UIViewController {
     private func setupLayout() {
         collectionView.contentInset = Constant.collectionViewInsets
 
-        guard let collectionViewSuperview = collectionView.superview else {
-            return assertionFailure("Image View has no super view")
-        }
-
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            collectionView.topAnchor.constraint(equalTo: collectionViewSuperview.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: collectionViewSuperview.bottomAnchor),
-            collectionView.leftAnchor.constraint(equalTo: collectionViewSuperview.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: collectionViewSuperview.rightAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
     }

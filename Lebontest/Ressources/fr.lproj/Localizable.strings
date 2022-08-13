@@ -6,3 +6,7 @@
 
 "classified_ads.navigation_title" = "Annonces";
 "classified_ads.cell.urgent" = "URGENT";
+
+/* ClassifiedAdDetails */
+
+"classified_ad_details.navigation_title" = "Annonce détails";

@@ -58,11 +58,28 @@ final class AppCoordinator: Coordinator {
         navigationController.viewControllers = [viewController]
     }
 
-    private func showClassifiedAdDetails(_ classifiedAd: ClassifiedAd) {}
+    private func showClassifiedAdDetails(_ classifiedAd: ClassifiedAd) {
+        let viewModel = ClassifiedAdDetailsViewModel(
+            classifiedAd: classifiedAd,
+            categoryMapperProvider: categoryMapperProvider,
+            numberFormatter: numberFormatter,
+            imageProvider: imageProvider
+        )
+        viewModel.delegate = self
+        let viewController = ClassifiedAdDetailsViewController(viewModel: viewModel, designToken: designToken)
+        viewController.modalPresentationStyle = .fullScreen
+        navigationController.present(viewController, animated: true, completion: nil)
+    }
 }
 
 extension AppCoordinator: ClassifiedAdsViewModelDelegate {
     func didSelect(classifiedAd: ClassifiedAd, from: ClassifiedAdsViewModel) {
         showClassifiedAdDetails(classifiedAd)
+    }
+}
+
+extension AppCoordinator: ClassifiedAdDetailsViewModelDelegate {
+    func didSelectClose(from viewModel: ClassifiedAdDetailsViewModel) {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }

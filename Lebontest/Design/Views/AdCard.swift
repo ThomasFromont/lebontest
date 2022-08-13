@@ -58,7 +58,7 @@ final class AdCard: UIView, HasData {
     private let infoBackground = UIView()
     private let infoLabel = UILabel()
 
-    public var data: Data? {
+    var data: Data? {
         didSet {
             imageView.image = data?.image
             titleLabel.text = data?.title
@@ -72,7 +72,7 @@ final class AdCard: UIView, HasData {
 
     // MARK: - Initializers
 
-    public init(designToken: DesignToken) {
+    init(designToken: DesignToken) {
         self.designToken = designToken
 
         super.init(frame: .zero)
@@ -82,7 +82,7 @@ final class AdCard: UIView, HasData {
         setupStyle()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -184,7 +184,7 @@ final class AdCard: UIView, HasData {
         titleLabel.numberOfLines = 2
 
         subtitleLabel.font = designToken.fontToken.subtitle
-        subtitleLabel.textColor = designToken.colorToken.textSecondary
+        subtitleLabel.textColor = designToken.colorToken.textPrimary
 
         infoBackground.backgroundColor = designToken.colorToken.backgroundHighlighted
         infoBackground.layer.cornerRadius = Constant.infoCornerRadius

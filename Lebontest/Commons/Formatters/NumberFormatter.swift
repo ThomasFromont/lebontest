@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol NumberFormatterType {
+protocol NumberFormatterType {
     func format(value: Double, minDigits: Int, maxDigits: Int) -> String
 }
 
-public final class NumberFormatter: NumberFormatterType {
+final class NumberFormatter: NumberFormatterType {
 
     private let formatter = Foundation.NumberFormatter()
 
@@ -19,7 +19,7 @@ public final class NumberFormatter: NumberFormatterType {
         return Locale.current
     }
 
-    public func format(value: Double, minDigits: Int, maxDigits: Int) -> String {
+    func format(value: Double, minDigits: Int, maxDigits: Int) -> String {
         formatter.locale = locale
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = minDigits

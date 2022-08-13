@@ -36,7 +36,7 @@ class ColorToken: ColorTokenType {
         return ColorToken.color(lightHex: ColorPalette.black, darkHex: ColorPalette.white)
     }
     var textSecondary: UIColor {
-        return ColorToken.color(lightHex: ColorPalette.black, darkHex: ColorPalette.white)
+        return ColorToken.color(lightHex: ColorPalette.grey, darkHex: ColorPalette.grey)
     }
     var textHighlighted: UIColor {
         return ColorToken.color(lightHex: ColorPalette.orangeDark, darkHex: ColorPalette.orangeLight)

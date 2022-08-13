@@ -14,6 +14,7 @@
 		6C04371A28A7DF0E00510A78 /* ClassifiedAdsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04371928A7DF0E00510A78 /* ClassifiedAdsViewModel+Mock.swift */; };
 		6C04371D28A7DFA200510A78 /* MockImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04371C28A7DFA200510A78 /* MockImageProvider.swift */; };
 		6C04371F28A7E2EB00510A78 /* MockCategoryMapperProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04371E28A7E2EB00510A78 /* MockCategoryMapperProvider.swift */; };
+		6C04372628A7F1B600510A78 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04372528A7F1B600510A78 /* CloseButton.swift */; };
 		6C4FD22628A6BF7200418201 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22528A6BF7200418201 /* Endpoint.swift */; };
 		6C4FD22828A6BF7C00418201 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22728A6BF7C00418201 /* HTTPClient.swift */; };
 		6C4FD22C28A6C38C00418201 /* ClassifiedAdsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD22B28A6C38C00418201 /* ClassifiedAdsEndpoint.swift */; };
@@ -84,6 +85,7 @@
 		6C04371928A7DF0E00510A78 /* ClassifiedAdsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassifiedAdsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		6C04371C28A7DFA200510A78 /* MockImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageProvider.swift; sourceTree = "<group>"; };
 		6C04371E28A7E2EB00510A78 /* MockCategoryMapperProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryMapperProvider.swift; sourceTree = "<group>"; };
+		6C04372528A7F1B600510A78 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		6C4FD22528A6BF7200418201 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		6C4FD22728A6BF7C00418201 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		6C4FD22B28A6C38C00418201 /* ClassifiedAdsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsEndpoint.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				6C4FD26028A6FF5900418201 /* AdCard.swift */,
+				6C04372528A7F1B600510A78 /* CloseButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -486,8 +489,8 @@
 		6CE026C028A537A700CD73C9 /* ClassifiedAdDetails */ = {
 			isa = PBXGroup;
 			children = (
-				6CE026C528A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift */,
 				6CE026C728A5380900CD73C9 /* ClassifiedAdDetailsViewController.swift */,
+				6CE026C528A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift */,
 			);
 			path = ClassifiedAdDetails;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C04372628A7F1B600510A78 /* CloseButton.swift in Sources */,
 				6CE026CB28A5554900CD73C9 /* ClassifiedAd.swift in Sources */,
 				6CE026C228A537E500CD73C9 /* ClassifiedAdsViewModel.swift in Sources */,
 				6C6C9D5928A6B320009B8E73 /* ClassifiedAdsRepository.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import XCTest
 
-public extension XCTestCase {
+extension XCTestCase {
 
     static let defaultTimeout: TimeInterval = 0.1
 

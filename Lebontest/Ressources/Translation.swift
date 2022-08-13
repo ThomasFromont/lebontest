@@ -17,6 +17,10 @@ internal enum Translation {
             static let urgent = Translation.tr("Localizable", "classified_ads.cell.urgent")
         }
     }
+
+    enum ClassifiedAdDetails {
+        static let navigationTitle = Translation.tr("Localizable", "classified_ad_details.navigation_title")
+    }
 }
 
 // MARK: - Implementation Details

@@ -11,6 +11,7 @@ import UIKit
 
 internal enum Asset {
     static let logo = ImageAsset(name: "logo")
+    static let iconClose = ImageAsset(name: "icon_close")
 }
 
 // MARK: - Implementation Details
