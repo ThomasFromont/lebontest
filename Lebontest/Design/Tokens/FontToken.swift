@@ -10,6 +10,7 @@ import Foundation
 
 protocol FontTokenType: AnyObject {
     var title: UIFont { get }
+    var navigationTitle: UIFont { get }
     var subtitle: UIFont { get }
     var tag: UIFont { get }
     var info: UIFont { get }
@@ -18,6 +19,7 @@ protocol FontTokenType: AnyObject {
 class FontToken: FontTokenType {
 
     var title: UIFont { return font(of: 18, with: UIFont.Weight.semibold) }
+    var navigationTitle: UIFont { return font(of: 14, with: UIFont.Weight.semibold) }
     var subtitle: UIFont { return font(of: 14, with: UIFont.Weight.regular) }
     var tag: UIFont { return font(of: 11, with: UIFont.Weight.semibold) }
     var info: UIFont { return font(of: 12, with: UIFont.Weight.regular) }
