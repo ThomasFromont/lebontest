@@ -22,6 +22,7 @@ final class ClassifiedAdsViewController: UIViewController {
 
     private let collectionView: UICollectionView
     private let loaderView = UIActivityIndicatorView(style: .large)
+    private let errorView: EmptyState
 
     private var cellViewModels = [AdCellViewModel]() {
         didSet {
@@ -38,6 +39,7 @@ final class ClassifiedAdsViewController: UIViewController {
         flowLayout.minimumLineSpacing = 0.0
         flowLayout.minimumInteritemSpacing = .zero
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        errorView = EmptyState(designToken: designToken)
 
         self.viewModel = viewModel
         self.designToken = designToken
@@ -63,6 +65,7 @@ final class ClassifiedAdsViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(collectionView)
+        view.addSubview(errorView)
         view.addSubview(loaderView)
     }
 
@@ -71,6 +74,7 @@ final class ClassifiedAdsViewController: UIViewController {
 
         loaderView.startAnimating()
         loaderView.hidesWhenStopped = true
+        errorView.isHidden = true
 
         collectionView.backgroundColor = designToken.colorToken.background
         collectionView.register(AdsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
@@ -83,12 +87,18 @@ final class ClassifiedAdsViewController: UIViewController {
         collectionView.contentInset = Constant.collectionViewInsets
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.translatesAutoresizingMaskIntoConstraints = false
         loaderView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+
+            errorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            errorView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            errorView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
 
             loaderView.topAnchor.constraint(equalTo: view.topAnchor),
             loaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -101,6 +111,8 @@ final class ClassifiedAdsViewController: UIViewController {
     private func bind() {
         navigationItem.backButtonTitle = viewModel.navigationTitle
 
+        errorView.button.addTarget(self, action: #selector(retryClicked), for: .touchUpInside)
+
         viewModel.bind = updateState
         viewModel.fetch()
     }
@@ -111,12 +123,21 @@ final class ClassifiedAdsViewController: UIViewController {
             case .success(let cellViewModels):
                 self.cellViewModels = cellViewModels
                 self.loaderView.stopAnimating()
+                self.errorView.isHidden = true
             case .loading:
                 self.loaderView.startAnimating()
-            case .error(let error):
+                self.errorView.isHidden = true
+            case .error(let errorInfo):
                 self.loaderView.stopAnimating()
+                self.errorView.isHidden = false
+                self.errorView.data = .init(title: errorInfo.title, button: errorInfo.button)
             }
         }
+    }
+
+    @objc
+    private func retryClicked(_ sender: AnyObject?) {
+        viewModel.fetch()
     }
 }
 

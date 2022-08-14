@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class Divider: UIView {
+final class Divider: UIView {
 
     private enum Constant {
         static let height: CGFloat = 0.5

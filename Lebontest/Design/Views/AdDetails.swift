@@ -20,13 +20,13 @@ final class AdDetails: UIView, HasData {
     // MARK: - Nested
 
     struct Data {
-        public let title: String
-        public let subtitle: String
-        public let category: String?
-        public let info: String
-        public let tag: String?
+        let title: String
+        let subtitle: String
+        let category: String?
+        let info: String
+        let tag: String?
 
-        public init(title: String, subtitle: String, category: String?, info: String, tag: String?) {
+        init(title: String, subtitle: String, category: String?, info: String, tag: String?) {
             self.title = title
             self.subtitle = subtitle
             self.category = category
@@ -47,7 +47,7 @@ final class AdDetails: UIView, HasData {
 
     // MARK: - Properties
 
-    public var data: Data? {
+    var data: Data? {
         didSet {
             titleLabel.text = data?.title
             subtitleLabel.text = data?.subtitle
@@ -74,7 +74,7 @@ final class AdDetails: UIView, HasData {
         setupStyle()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

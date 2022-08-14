@@ -81,11 +81,11 @@ final class Tag: UIView, HasData {
         isExclusiveTouch = true
         backgroundColor = designToken.colorToken.background
         layer.cornerRadius = Constant.cornerRadius
-        layer.borderColor = designToken.colorToken.textHighlighted.cgColor
+        layer.borderColor = designToken.colorToken.highlighted.cgColor
         layer.borderWidth = Constant.borderWidth
 
         tagLabel.font = designToken.fontToken.tag
-        tagLabel.textColor = designToken.colorToken.textHighlighted
+        tagLabel.textColor = designToken.colorToken.highlighted
         tagLabel.numberOfLines = 1
     }
 }

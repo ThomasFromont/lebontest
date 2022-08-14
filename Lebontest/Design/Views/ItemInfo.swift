@@ -17,10 +17,10 @@ final class ItemInfo: UIView, HasData {
     // MARK: - Nested
 
     struct Data {
-        public let title: String?
-        public let subtitle: String
+        let title: String?
+        let subtitle: String
 
-        public init(title: String?, subtitle: String) {
+        init(title: String?, subtitle: String) {
             self.title = title
             self.subtitle = subtitle
         }
@@ -36,7 +36,7 @@ final class ItemInfo: UIView, HasData {
 
     // MARK: - Properties
 
-    public var data: Data? {
+    var data: Data? {
         didSet {
             titleLabel.text = data?.title
             subtitleLabel.text = data?.subtitle
@@ -56,7 +56,7 @@ final class ItemInfo: UIView, HasData {
         setupStyle()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

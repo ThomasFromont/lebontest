@@ -11,10 +11,12 @@ protocol ClassifiedAdsViewModelDelegate: AnyObject {
 
 final class ClassifiedAdsViewModel {
 
+    typealias ErrorInfo = (title: String, button: String)
+
     enum State {
         case success([AdCellViewModel])
         case loading
-        case error(String)
+        case error(ErrorInfo)
     }
 
     // MARK: - Properties
@@ -41,8 +43,8 @@ final class ClassifiedAdsViewModel {
                     self?.bind?(.success(cellViewModels))
                 }
             },
-            onError: { error in
-                // TODO: - Handle error
+            onError: { [weak self] error in
+                self?.bind?(.error((title: Translation.ClassifiedAds.Error.title, button: Translation.ClassifiedAds.Error.button)))
             }
         )
     }

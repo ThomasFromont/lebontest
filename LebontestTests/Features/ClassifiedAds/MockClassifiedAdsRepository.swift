@@ -10,13 +10,23 @@ import Foundation
 
 class MockClassifiedAdsRepository: ClassifiedAdsRepositoryType {
 
-    private let classifiedAds: [ClassifiedAd]
+    enum Response {
+        case complete([ClassifiedAd])
+        case error(Error)
+    }
 
-    init(classifiedAds: [ClassifiedAd] = [.mock()]) {
-        self.classifiedAds = classifiedAds
+    private let response: Response
+
+    init(response: Response = .complete([.mock()])) {
+        self.response = response
     }
 
     func get(onComplete: (([ClassifiedAd]) -> Void)?, onError: ((Error) -> Void)?) {
-        onComplete?(classifiedAds)
+        switch response {
+        case .complete(let classifiedAds):
+            onComplete?(classifiedAds)
+        case .error(let error):
+            onError?(error)
+        }
     }
 }

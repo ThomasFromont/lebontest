@@ -25,7 +25,7 @@ class ClassifiedAdsViewModelTests: XCTestCase {
         )
 
         let viewModel = ClassifiedAdsViewModel.mock(
-            classifiedAdsRepository: MockClassifiedAdsRepository(classifiedAds: [classifiedAd])
+            classifiedAdsRepository: MockClassifiedAdsRepository(response: .complete([classifiedAd]))
         )
         viewModel.delegate = delegate
 
@@ -55,10 +55,25 @@ class ClassifiedAdsViewModelTests: XCTestCase {
         wait(for: [expectClassifiedAd], timeout: XCTestCase.defaultTimeout)
     }
 
+    func testErrorState() {
+        let states = recordedStates(response: .error(MockAPIError.error))
+
+        guard
+            states.count == 2,
+            case .loading = states[0],
+            case .error(let errorInfo) = states[1]
+        else {
+            return XCTFail("Wrong states")
+        }
+
+        XCTAssertEqual(errorInfo.title, Translation.ClassifiedAds.Error.title)
+        XCTAssertEqual(errorInfo.button, Translation.ClassifiedAds.Error.button)
+    }
+
     func testClassifiedAdCell() {
         let title = "🐼"
         let classifiedAd = ClassifiedAd.mock(title: title)
-        let states = recordedStates(classifiedAds: [classifiedAd])
+        let states = recordedStates(response: .complete([classifiedAd]))
 
         guard
             states.count == 2,
@@ -75,11 +90,11 @@ class ClassifiedAdsViewModelTests: XCTestCase {
         XCTAssertEqual(adCellViewModels[0].title, title)
     }
 
-    private func recordedStates(classifiedAds: [ClassifiedAd] = [.mock()]) -> [ClassifiedAdsViewModel.State] {
+    private func recordedStates(response: MockClassifiedAdsRepository.Response) -> [ClassifiedAdsViewModel.State] {
         let expectation = self.expectation(description: "bind")
         expectation.expectedFulfillmentCount = 2
 
-        let classifiedAdsRepository = MockClassifiedAdsRepository(classifiedAds: classifiedAds)
+        let classifiedAdsRepository = MockClassifiedAdsRepository(response: response)
         let viewModel = ClassifiedAdsViewModel.mock(classifiedAdsRepository: classifiedAdsRepository)
 
         var recordedStates = [ClassifiedAdsViewModel.State]()

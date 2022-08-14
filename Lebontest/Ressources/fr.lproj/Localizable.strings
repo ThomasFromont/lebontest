@@ -11,6 +11,8 @@
 /* ClassifiedAds */
 
 "classified_ads.navigation_title" = "Annonces";
+"classified_ads.error.title" = "Désolé, nous avons rencontré une erreur.\nMerci de réessayer plus tard";
+"classified_ads.error.button" = "Réessayer";
 "classified_ads.cell.urgent" = "URGENT";
 
 /* ClassifiedAdDetails */

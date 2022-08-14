@@ -182,7 +182,7 @@ final class ClassifiedAdDetailsViewController: UIViewController {
     }
 
     @objc
-    func closeClicked(_ sender: AnyObject?) {
+    private func closeClicked(_ sender: AnyObject?) {
         viewModel.close()
     }
 }

@@ -12,8 +12,13 @@ protocol ColorTokenType: AnyObject {
     var divider: UIColor { get }
 
     var textPrimary: UIColor { get }
-    var textHighlighted: UIColor { get }
-    var backgroundHighlighted: UIColor { get }
+    var textButton: UIColor { get }
+
+    var highlighted: UIColor { get }
+    var highlightedLight: UIColor { get }
+
+    var button: UIColor { get }
+    var buttonHighlighted: UIColor { get }
 }
 
 class ColorToken: ColorTokenType {
@@ -22,7 +27,8 @@ class ColorToken: ColorTokenType {
         static let black: UInt32 = 0x000000
         static let grey: UInt32 = 0x8191A0
         static let orangeLight: UInt32 = 0xFEF0E9
-        static let orangeDark: UInt32 = 0xFF6E14
+        static let orange: UInt32 = 0xFF6E14
+        static let orangeDark: UInt32 = 0xB45C36
         static let white: UInt32 = 0xFFFFFF
     }
 
@@ -38,11 +44,22 @@ class ColorToken: ColorTokenType {
     var textPrimary: UIColor {
         return ColorToken.color(lightHex: ColorPalette.black, darkHex: ColorPalette.white)
     }
-    var textHighlighted: UIColor {
-        return ColorToken.color(lightHex: ColorPalette.orangeDark, darkHex: ColorPalette.orangeLight)
+    var textButton: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.white, darkHex: ColorPalette.white)
     }
-    var backgroundHighlighted: UIColor {
-        return ColorToken.color(lightHex: ColorPalette.orangeLight, darkHex: ColorPalette.orangeDark)
+    
+    var highlighted: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.orange, darkHex: ColorPalette.orangeLight)
+    }
+    var highlightedLight: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.orangeLight, darkHex: ColorPalette.orange)
+    }
+
+    var button: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.orange, darkHex: ColorPalette.orange)
+    }
+    var buttonHighlighted: UIColor {
+        return ColorToken.color(lightHex: ColorPalette.orangeDark, darkHex: ColorPalette.orangeDark)
     }
 }
 

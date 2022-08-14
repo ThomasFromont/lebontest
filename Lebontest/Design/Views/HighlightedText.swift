@@ -77,11 +77,11 @@ final class HighlightedText: UIView, HasData {
     // MARK: - Style
 
     private func setupStyle() {
-        backgroundColor = designToken.colorToken.backgroundHighlighted
+        backgroundColor = designToken.colorToken.highlightedLight
         layer.cornerRadius = Constant.cornerRadius
 
         infoLabel.font = designToken.fontToken.info
-        infoLabel.textColor = designToken.colorToken.textHighlighted
+        infoLabel.textColor = designToken.colorToken.highlighted
         infoLabel.numberOfLines = 0
     }
 }

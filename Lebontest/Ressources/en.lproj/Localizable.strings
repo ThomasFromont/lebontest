@@ -11,6 +11,8 @@
 /* ClassifiedAds */
 
 "classified_ads.navigation_title" = "Ads";
+"classified_ads.error.title" = "Sorry, it seems like there has been an error.\nTry again later";
+"classified_ads.error.button" = "Try again";
 "classified_ads.cell.urgent" = "URGENT";
 
 /* ClassifiedAdDetails */

@@ -45,6 +45,8 @@
 		6C4FD25D28A6FA4E00418201 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD25C28A6FA4E00418201 /* ImageProvider.swift */; };
 		6C4FD26128A6FF5900418201 /* AdCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD26028A6FF5900418201 /* AdCard.swift */; };
 		6C4FD26428A6FF8800418201 /* HasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FD26328A6FF8800418201 /* HasData.swift */; };
+		6C5581D628A9294D0080BCCF /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5581D528A9294D0080BCCF /* EmptyState.swift */; };
+		6C5581D828A92A360080BCCF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5581D728A92A360080BCCF /* Button.swift */; };
 		6C6C9D4728A688FC009B8E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4928A688FC009B8E73 /* Localizable.strings */; };
 		6C6C9D4C28A6899F009B8E73 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D4B28A6899F009B8E73 /* Translation.swift */; };
 		6C6C9D5128A68ADC009B8E73 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C9D5028A68ADC009B8E73 /* AdCell.swift */; };
@@ -125,6 +127,8 @@
 		6C4FD25C28A6FA4E00418201 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		6C4FD26028A6FF5900418201 /* AdCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCard.swift; sourceTree = "<group>"; };
 		6C4FD26328A6FF8800418201 /* HasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasData.swift; sourceTree = "<group>"; };
+		6C5581D528A9294D0080BCCF /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		6C5581D728A92A360080BCCF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6C6C9D3F28A68128009B8E73 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		6C6C9D4028A68128009B8E73 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		6C6C9D4128A68128009B8E73 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -256,8 +260,7 @@
 		6C4FD23928A6D82E00418201 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				6C4FD24628A6DEA300418201 /* Files */,
-				6C4FD23A28A6D85300418201 /* CategoriesRepositoryTests.swift */,
+				6C5581DA28A937B80080BCCF /* Repositories */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -352,8 +355,10 @@
 			children = (
 				6C4FD26028A6FF5900418201 /* AdCard.swift */,
 				6C04372928A8204F00510A78 /* AdDetails.swift */,
+				6C5581D728A92A360080BCCF /* Button.swift */,
 				6C04372528A7F1B600510A78 /* CloseButton.swift */,
 				6C04372F28A82FDF00510A78 /* Divider.swift */,
+				6C5581D528A9294D0080BCCF /* EmptyState.swift */,
 				6C04373128A8324C00510A78 /* ItemInfo.swift */,
 				6C04372B28A8238E00510A78 /* HighlightedText.swift */,
 				6C04372D28A8254200510A78 /* Tag.swift */,
@@ -367,6 +372,15 @@
 				6C4FD26328A6FF8800418201 /* HasData.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6C5581DA28A937B80080BCCF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6C4FD24628A6DEA300418201 /* Files */,
+				6C4FD23A28A6D85300418201 /* CategoriesRepositoryTests.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		6C6C9D3E28A680D5009B8E73 /* Fonts */ = {
@@ -696,10 +710,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C5581D628A9294D0080BCCF /* EmptyState.swift in Sources */,
 				6C04372E28A8254200510A78 /* Tag.swift in Sources */,
 				6C04372628A7F1B600510A78 /* CloseButton.swift in Sources */,
 				6CE026CB28A5554900CD73C9 /* ClassifiedAd.swift in Sources */,
 				6CE026C228A537E500CD73C9 /* ClassifiedAdsViewModel.swift in Sources */,
+				6C5581D828A92A360080BCCF /* Button.swift in Sources */,
 				6C04373228A8324C00510A78 /* ItemInfo.swift in Sources */,
 				6C6C9D5928A6B320009B8E73 /* ClassifiedAdsRepository.swift in Sources */,
 				6CE026C628A537FD00CD73C9 /* ClassifiedAdDetailsViewModel.swift in Sources */,

@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol DateFormatterType {
+protocol DateFormatterType {
     func formatDayRelative(date: Date, relativeTo: Date) -> String
 }
 
-public final class DateFormatter: DateFormatterType {
+final class DateFormatter: DateFormatterType {
 
     private var formattersCachedByDateFormat: [String: Foundation.DateFormatter] = [:]
     private let queue = DispatchQueue(label: "lebontest.dateformatter", qos: DispatchQoS.userInteractive)
@@ -23,7 +23,7 @@ public final class DateFormatter: DateFormatterType {
 
     // MARK: - DateFormatterType
 
-    public func formatDayRelative(date: Date, relativeTo referenceDate: Date) -> String {
+    func formatDayRelative(date: Date, relativeTo referenceDate: Date) -> String {
         switch numberOfDays(from: referenceDate, to: date, in: calendar) {
         case -1:
             return dateFormatter(for: .yesterdayWithTime).string(from: date)

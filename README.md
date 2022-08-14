@@ -34,3 +34,10 @@ This application contains only two features, the classified ads list and the cla
 - ~2h display the details on the classified ad details with Tests
 - ~1h to handle navigation bar transition when scrolling on classified ad details
 - ~1/2h to handle loading state on classified ads
+- ~1h to handle error state on classified ads
+
+### What I would like to do next 🤔
+
+- Add more testing. (`DateFormatter`, `NumberFormatter`, ...)
+- Add UISearchController to handle search on classified ads
+- Add SnapshotTesting for Design Components
