@@ -35,6 +35,7 @@ This application contains only two features, the classified ads list and the cla
 - ~1h to handle navigation bar transition when scrolling on classified ad details
 - ~1/2h to handle loading state on classified ads
 - ~1h to handle error state on classified ads
+- ~1/2h to add AppIcon & SplashScreen
 
 ### What I would like to do next 🤔
 
