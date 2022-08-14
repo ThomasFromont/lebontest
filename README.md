@@ -33,3 +33,4 @@ This application contains only two features, the classified ads list and the cla
 - ~1h to create the second VM + VC with the image header
 - ~2h display the details on the classified ad details with Tests
 - ~1h to handle navigation bar transition when scrolling on classified ad details
+- ~1/2h to handle loading state on classified ads

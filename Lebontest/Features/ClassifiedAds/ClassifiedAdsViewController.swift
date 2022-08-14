@@ -21,6 +21,7 @@ final class ClassifiedAdsViewController: UIViewController {
     private let designToken: DesignToken
 
     private let collectionView: UICollectionView
+    private let loaderView = UIActivityIndicatorView(style: .large)
 
     private var cellViewModels = [AdCellViewModel]() {
         didSet {
@@ -62,12 +63,16 @@ final class ClassifiedAdsViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(collectionView)
+        view.addSubview(loaderView)
     }
 
     private func setupStyle() {
         view.backgroundColor = designToken.colorToken.background
-        collectionView.backgroundColor = designToken.colorToken.background
 
+        loaderView.startAnimating()
+        loaderView.hidesWhenStopped = true
+
+        collectionView.backgroundColor = designToken.colorToken.background
         collectionView.register(AdsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(AdCell.self, forCellWithReuseIdentifier: "adCell")
         collectionView.dataSource = self
@@ -78,11 +83,17 @@ final class ClassifiedAdsViewController: UIViewController {
         collectionView.contentInset = Constant.collectionViewInsets
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        loaderView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+
+            loaderView.topAnchor.constraint(equalTo: view.topAnchor),
+            loaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            loaderView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            loaderView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -90,13 +101,21 @@ final class ClassifiedAdsViewController: UIViewController {
     private func bind() {
         navigationItem.backButtonTitle = viewModel.navigationTitle
 
-        viewModel.bind = updateData
+        viewModel.bind = updateState
         viewModel.fetch()
     }
 
-    private func updateData(_ data: ClassifiedAdsViewModel.Data) {
+    private func updateState(_ state: ClassifiedAdsViewModel.State) {
         DispatchQueue.main.async {
-            self.cellViewModels = data.cellViewModels
+            switch state {
+            case .success(let cellViewModels):
+                self.cellViewModels = cellViewModels
+                self.loaderView.stopAnimating()
+            case .loading:
+                self.loaderView.startAnimating()
+            case .error(let error):
+                self.loaderView.stopAnimating()
+            }
         }
     }
 }

@@ -23,16 +23,15 @@ class CategoryMapperProvider: CategoryMapperProviderType {
 
     init(categoriesRepository: CategoriesRepositoryType) {
         self.categoriesRepository = categoriesRepository
-        let dispatchGroup = DispatchGroup()
 
         dispatchGroup.enter()
         categoriesRepository.get(
             onComplete: { [weak self] categories in
                 self?.categoryMapper = CategoryMapper(categories: categories)
-                dispatchGroup.leave()
+                self?.dispatchGroup.leave()
             },
-            onError: { _ in
-                dispatchGroup.leave()
+            onError: { [weak self] _ in
+                self?.dispatchGroup.leave()
             }
         )
     }

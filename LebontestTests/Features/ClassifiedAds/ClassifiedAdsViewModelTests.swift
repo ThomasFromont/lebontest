@@ -14,6 +14,7 @@ class ClassifiedAdsViewModelTests: XCTestCase {
         let classifiedAd = ClassifiedAd.mock()
 
         let expectBind = expectation(description: "Bind should trigger")
+        expectBind.expectedFulfillmentCount = 2
         let expectClassifiedAd = expectation(description: "Select classified ad delegate method should trigger")
 
         let delegate = MockClassifiedAdsViewModelDelegate(
@@ -28,53 +29,69 @@ class ClassifiedAdsViewModelTests: XCTestCase {
         )
         viewModel.delegate = delegate
 
-        var adCellViewModel: AdCellViewModel?
-        let bind: ((ClassifiedAdsViewModel.Data) -> Void)? = { data in
+        var recordedStates = [ClassifiedAdsViewModel.State]()
+        let bind: ((ClassifiedAdsViewModel.State) -> Void)? = { state in
             expectBind.fulfill()
-            adCellViewModel = data.cellViewModels.first
+            recordedStates.append(state)
         }
         viewModel.bind = bind
 
         viewModel.fetch()
         wait(for: [expectBind], timeout: XCTestCase.defaultTimeout)
 
-        guard adCellViewModel != nil else {
-            return XCTFail("Wrong cell type")
+        guard
+            recordedStates.count == 2,
+            case .loading = recordedStates[0],
+            case .success(let adCellViewModels) = recordedStates[1]
+        else {
+            return XCTFail("Wrong states")
         }
 
-        adCellViewModel?.select()
+        guard adCellViewModels.count == 1 else {
+            return XCTFail("Wrong cells count")
+        }
+
+        adCellViewModels[0].select()
         wait(for: [expectClassifiedAd], timeout: XCTestCase.defaultTimeout)
     }
 
     func testClassifiedAdCell() {
         let title = "🐼"
         let classifiedAd = ClassifiedAd.mock(title: title)
-        let cells = recordedCellViewModels(classifiedAds: [classifiedAd])
+        let states = recordedStates(classifiedAds: [classifiedAd])
 
-        guard cells.count == 1 else {
+        guard
+            states.count == 2,
+            case .loading = states[0],
+            case .success(let adCellViewModels) = states[1]
+        else {
+            return XCTFail("Wrong states")
+        }
+
+        guard adCellViewModels.count == 1 else {
             return XCTFail("Wrong cell type")
         }
 
-        XCTAssertEqual(cells[0].title, title)
+        XCTAssertEqual(adCellViewModels[0].title, title)
     }
 
-    private func recordedCellViewModels(classifiedAds: [ClassifiedAd] = [.mock()]) -> [AdCellViewModel] {
-        let expectation = self.expectation(description: "cells")
+    private func recordedStates(classifiedAds: [ClassifiedAd] = [.mock()]) -> [ClassifiedAdsViewModel.State] {
+        let expectation = self.expectation(description: "bind")
+        expectation.expectedFulfillmentCount = 2
 
         let classifiedAdsRepository = MockClassifiedAdsRepository(classifiedAds: classifiedAds)
         let viewModel = ClassifiedAdsViewModel.mock(classifiedAdsRepository: classifiedAdsRepository)
 
-        var recordedCellViewModels: [AdCellViewModel] = []
-
-        let bind: ((ClassifiedAdsViewModel.Data) -> Void)? = { data in
+        var recordedStates = [ClassifiedAdsViewModel.State]()
+        let bind: ((ClassifiedAdsViewModel.State) -> Void)? = { state in
             expectation.fulfill()
-            recordedCellViewModels = data.cellViewModels
+            recordedStates.append(state)
         }
         viewModel.bind = bind
 
         viewModel.fetch()
-        waitForExpectationsWithDefaultTimeout()
+        wait(for: [expectation], timeout: XCTestCase.defaultTimeout)
 
-        return recordedCellViewModels
+        return recordedStates
     }
 }

@@ -11,8 +11,10 @@ protocol ClassifiedAdsViewModelDelegate: AnyObject {
 
 final class ClassifiedAdsViewModel {
 
-    struct Data {
-        let cellViewModels: [AdCellViewModel]
+    enum State {
+        case success([AdCellViewModel])
+        case loading
+        case error(String)
     }
 
     // MARK: - Properties
@@ -27,7 +29,8 @@ final class ClassifiedAdsViewModel {
     // MARK: - Inputs
 
     func fetch() {
-        // TODO: - Handle loading
+        bind?(.loading)
+
         classifiedAdsRepository.get(
             onComplete: { [weak self] classifiedAds in
                 self?.categoryMapperProvider.get { [weak self] categoryMapper in
@@ -35,7 +38,7 @@ final class ClassifiedAdsViewModel {
                         classifiedAds: classifiedAds,
                         categoryMapper: categoryMapper
                     ) ?? []
-                    self?.bind?(Data(cellViewModels: cellViewModels))
+                    self?.bind?(.success(cellViewModels))
                 }
             },
             onError: { error in
@@ -47,7 +50,7 @@ final class ClassifiedAdsViewModel {
     // MARK: - Outputs
 
     let navigationTitle: String
-    var bind: ((Data) -> Void)?
+    var bind: ((State) -> Void)?
 
     // MARK: - Initializers
 
